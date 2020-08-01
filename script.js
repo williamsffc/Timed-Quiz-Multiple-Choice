@@ -5,13 +5,14 @@ var topDiv = document.getElementById("#topDiv");
 var middleDiv = document.getElementById("#middleDiv");
 var bottomDiv = document.getElementById("#bottomDiv");
 
-// var questionsAsked = document.getElementById("#questions");
-var question = document.getElementById("#questions")   
-var choices = document.getElementById("#choices");
+var quiz = document.getElementById("#quizDiv");
+var question = document.getElementById("#questions");
 var choiceA = document.getElementById("#A");
 var choiceB = document.getElementById("#B");
 var choiceC = document.getElementById("#C");
 var choiceD = document.getElementById("#D");
+
+var startBttn = document.getElementById("#button1");
 
 
 var questionsQuiz = [
@@ -21,49 +22,39 @@ var questionsQuiz = [
         choiceB: "_first_and_last_names",
         choiceC: "FirstAndLast",
         choiceD: "None of the above",
-        answer: "A"
+        answer: "A",
     },
     {
         question: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
-        choiceA: "<BODY>",
-        choiceB: "<HEAD>",
-        choiceC: "<TITLE>",
-        choiceD: "<SCRIPT>",
-        answer: "D"
+        choiceA: "&ltbody&gt",
+        choiceB: "&lthead&gt",
+        choiceC: "&lttittle&gt",
+        choiceD: "&ltscript&gt",
+        answer: "D",
     },
     {
         question: "Inside which HTML element do we put the JavaScript?",
-        choiceA: "<js>",
-        choiceB: "<scripting>",
-        choiceC: "<script>",
-        choiceD: "<javascript>",
-        answer: "C"
+        choiceA: "&ltjs&gt",
+        choiceB: "&ltscripting&gt",
+        choiceC: "&ltscript&gt",
+        choiceD: "&ltjavascript&gt",
+        answer: "C",
     },
     {
         question: "The _______ method of an Array object adds and / or removes elements from an array.",
         choiceA: "Reverse",
-        choiceB: "Shift",
-        choiceC: "Slice",
-        choiceD: "Splice",
-        answer: "D"
-    },
-    {
-        question: "__________ JavaScript is also called server-side JavaScript.",
-        choiceA: "Microsoft",
-        choiceB: "Navigator",
-        choiceC: "LiveWire",
-        choiceD: "Native",
-        answer: "c"
+        choiceB: "Slice",
+        choiceC: "Splice",
+        choiceD: "Shift",
+        answer: "C"
     }
 ];
 
-// --- TIMER ----
-function startTimer() {
-    startT();
-};
+button1.addEventListener("click", startTimer)
 
+// --- TIMER ----
 function startT() {
-    var counter = 30;
+    var counter = 10;
     setInterval(function () {
         counter--;
         if (counter >= 0) {
@@ -77,23 +68,43 @@ function startT() {
     }, 1000);
 }
 
-//------
-var lastQuestion = questionsQuiz.length - 1;
+//--- QUESTIONS AND ANSWERS DISPLAY
+var lastQuestion = questionsQuiz.length + 1;
 var currentQuestion = 0;
 
 function renderQuestion() {
     var q = questionsQuiz[currentQuestion];
-
     questions.innerHTML = "<p>" + q.question + "</p";
     A.innerHTML = q.choiceA;
     B.innerHTML = q.choiceB;
     C.innerHTML = q.choiceC;
     D.innerHTML = q.choiceD;
+};
+
+function startTimer() {
+    button1.style.display = "none";
+    renderQuestion();
+    quizDiv.style.display = "block"
+    startT();
+};
+
+// CHECK FOR CORRECT ANSWERS
+
+function answerMatch(choice) {
+    (choice == questionsQuiz[currentQuestion].answer)
+
+    if (currentQuestion < lastQuestion) {
+        currentQuestion++
+        renderQuestion();
+        console.log(choice)
+    } else{
+        clearInterval(startT);
+    }
+
 }
 
-button1.style.display = "none";
-renderQuestion();
-quizDiv.style.display = "block"
+
+
 
 
 

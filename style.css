@@ -9,6 +9,7 @@ body {
 }
 
 nav {
+  position: fixed;
   opacity: 1;
   /* Change to 0 */
   transition: opacity 0.5s ease;
@@ -32,12 +33,14 @@ nav:hover {
   font-family: "Pacifico", cursive;
   width: 50%;
   padding: 2px;
+  margin-left: 1rem;
 }
 
 .timer {
   font-family: "Pacifico", cursive;
   width: 50%;
   padding: 2px;
+  margin-right: 1rem;
   text-align: right;
 }
 
@@ -78,14 +81,12 @@ nav:hover {
 .quiz-container {
   height: 37vh;
   width: 70%;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .quiz-container p {
   margin: 3rem;
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
@@ -102,7 +103,7 @@ nav:hover {
 
 .quiz-container button {
   font-family: "Montserrat", sans-serif;
-  width: 40%;
+  width: 50%;
   font-size: 21px;
   border-radius: 1rem;
   padding: 1rem;
@@ -128,3 +129,4 @@ nav:hover {
   justify-content: center;
   align-items: center;
 }
+

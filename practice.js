@@ -68,9 +68,10 @@ function answerMatch(answer) {
     } else {
         wrongAnswer();
     }
+}
 
-    if (runningQuestion < lastQuestion) {
-        count = 0;
-        runningQuestion++;
-        renderQuestion();
-    }
+    // if (runningQuestion < lastQuestion) {
+    //     count = 0;
+    //     runningQuestion++;
+    //     renderQuestion();
+    // }
