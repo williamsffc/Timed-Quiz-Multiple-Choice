@@ -1,9 +1,18 @@
-var question = document.getElementById("#middleDiv");
+var highScoreDiv = document.getElementById("#highScoreDiv");
+var timerDiv = document.getElementById("#timerDiv");
+
+var topDiv = document.getElementById("#topDiv");
+var middleDiv = document.getElementById("#middleDiv");
+var bottomDiv = document.getElementById("#bottomDiv");
+
+// var questionsAsked = document.getElementById("#questions");
+var question = document.getElementById("#questions")   
+var choices = document.getElementById("#choices");
 var choiceA = document.getElementById("#A");
 var choiceB = document.getElementById("#B");
 var choiceC = document.getElementById("#C");
 var choiceD = document.getElementById("#D");
-var clickBttn = document.getElementById("#bottomDiv");
+
 
 var questionsQuiz = [
     {
@@ -46,7 +55,7 @@ var questionsQuiz = [
         choiceD: "Native",
         answer: "c"
     }
-]
+];
 
 // --- TIMER ----
 function startTimer() {
@@ -69,19 +78,22 @@ function startT() {
 }
 
 //------
+var lastQuestion = questionsQuiz.length - 1;
+var currentQuestion = 0;
 
-var startQ = document.getElementById("#button1");
+function renderQuestion() {
+    var q = questionsQuiz[currentQuestion];
 
-startQ.addEventListener("click", startQuiz);
+    questions.innerHTML = "<p>" + q.question + "</p";
+    A.innerHTML = q.choiceA;
+    B.innerHTML = q.choiceB;
+    C.innerHTML = q.choiceC;
+    D.innerHTML = q.choiceD;
+}
 
-function startQuiz() {
-    startQ.style.display = "none";
-    quizDiv.style.display = "block";
-};
-
-//---- on click i want to clear top/middle/bottom and replace
-//---- top with question
-//---- middle with questions (buttons)
+button1.style.display = "none";
+renderQuestion();
+quizDiv.style.display = "block"
 
 
 

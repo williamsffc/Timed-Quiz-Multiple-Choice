@@ -52,31 +52,61 @@ nav:hover {
 
 .top {
   font-family: "Pacifico", cursive;
-  font-size: 30px;
+  font-size: 35px;
   margin-top: 1rem;
   height: 15vh;
   width: 70%;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .middle {
-  height: 20vh;
+  height: 12vh;
   width: 70%;
-  border: 1px solid green;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.quiz-container{
-  height: 30vh;
+.middle p {
+  margin: 1rem;
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.quiz-container {
+  height: 37vh;
   width: 70%;
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.quiz-container p {
+  margin: 3rem;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-container #choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quiz-container button {
+  font-family: "Montserrat", sans-serif;
+  width: 40%;
+  font-size: 21px;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 5px;
 }
 
 .bottom {
@@ -85,13 +115,6 @@ nav:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.middle p {
-  margin: 1rem;
-  font-size: 28px;
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
 }
 
 .bottom button {
