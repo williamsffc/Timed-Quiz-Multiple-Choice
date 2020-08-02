@@ -27,10 +27,10 @@ var questionsQuiz = [
     {
         question: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
         choiceA: "&ltbody&gt",
-        choiceB: "&lthead&gt",
+        choiceB: "&ltscript&gt",
         choiceC: "&lttittle&gt",
-        choiceD: "&ltscript&gt",
-        answer: "D",
+        choiceD: "&lthead&gt",
+        answer: "B",
     },
     {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -42,12 +42,12 @@ var questionsQuiz = [
     },
     {
         question: "The _______ method of an Array object adds and / or removes elements from an array.",
-        choiceA: "Reverse",
+        choiceA: "Splice",
         choiceB: "Slice",
-        choiceC: "Splice",
+        choiceC: "Reverse",
         choiceD: "Shift",
-        answer: "C"
-    }
+        answer: "A"
+    },
 ];
 
 button1.addEventListener("click", startTimer)
@@ -84,22 +84,28 @@ function renderQuestion() {
 function startTimer() {
     button1.style.display = "none";
     renderQuestion();
-    quizDiv.style.display = "block"
+    quizDiv.style.display = "block";
     startT();
 };
 
 // CHECK FOR CORRECT ANSWERS
 
 function answerMatch(choice) {
-    (choice == questionsQuiz[currentQuestion].answer)
+    if (choice == questionsQuiz[currentQuestion].answer) {
+        currentQuestion++;
+    };
 
     if (currentQuestion < lastQuestion) {
-        currentQuestion++
         renderQuestion();
-        console.log(choice)
-    } else{
         clearInterval(startT);
-    }
+      
+        console.log(choice)
+    };
+
+    // if (currentQuestion === 0) {
+    // quizDiv.style.display = "none";
+    // button1.style.display = "block";
+    // }
 
 }
 
