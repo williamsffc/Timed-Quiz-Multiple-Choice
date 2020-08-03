@@ -10,7 +10,7 @@ This project has being created with the intention to be used at schools for time
 
 ---
 
-Link: https://williamsffc.github.io/homework4/
+Link: https://williamsffc.github.io/Timed-Quiz-Multiple-Choice/
 
 ---
 
