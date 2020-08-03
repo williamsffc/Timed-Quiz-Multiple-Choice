@@ -14,6 +14,13 @@ Link: https://williamsffc.github.io/homework4/
 
 ---
 
+Screenshot of the project.
+
+![](images/pic1.jpg)
+![](images/pic2.jpg)
+![](images/pic3.jpg)
+![](images/pic4.jpg)
+
 ##  License & Copyright
 
 © Williams F Flores - 2020
