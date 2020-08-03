@@ -84,6 +84,17 @@ nav:hover {
   align-items: center;
 }
 
+.quiz-container #questionTitle {
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
 .quiz-container p {
   margin: 3rem;
   font-size: 30px;
