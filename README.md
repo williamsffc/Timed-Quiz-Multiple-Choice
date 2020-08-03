@@ -1,4 +1,4 @@
-# README - homework4
+# README - Timed-Quiz-Multiple-Choice
 
 **Version 1.0.0**
 
