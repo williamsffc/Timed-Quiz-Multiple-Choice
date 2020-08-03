@@ -16,7 +16,10 @@ Link: https://williamsffc.github.io/homework4/
 
 Screenshot of the project.
 
-<img src="images/pic1.jpg">
+<img src="images/pic1.JPG">
+<img src="images/pic2.JPG">
+<img src="images/pic3.JPG">
+<img src="images/pic4.JPG">
 
 ##  License & Copyright
 
