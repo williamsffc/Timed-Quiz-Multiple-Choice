@@ -12,6 +12,8 @@ var choiceB = document.getElementById("#btn-1");
 var choiceC = document.getElementById("#btn-2");
 var choiceD = document.getElementById("#btn-3");
 
+var counter = 20;
+
 var startBttn = document.getElementById("#button1");
 
 var questionsQuiz = [
@@ -41,7 +43,6 @@ button1.addEventListener("click", startTimer);
 
 // --- TIMER ----
 function startT() {
-    var counter = 20;
     setInterval(function () {
         counter--;
         if (counter > 0) {
@@ -60,8 +61,21 @@ function startT() {
     }, 850);
 };
 
-var lastQuestion = questionsQuiz.length;
+var lastQuestion = questionsQuiz.length; 
 var currentQ = 0;
+var correctAnswer = 0;
+
+function correctAnswer() {
+    if (correctAnswer === 0) {
+        span = document.getElementById("countQ");
+        span.innerHTML = countQ;
+    }
+
+    if (correctAnswer > 0){
+        span = document.getElementById("countQ");
+        span.innerHTML = countQ;
+    }
+};
 
 //--- QUESTIONS AND ANSWERS DISPLAY
 function displayQ() {
@@ -88,13 +102,14 @@ function startTimer() {
 function answerMatch(choice) {
     if (choice == questionsQuiz[currentQ].correctAnswer) {
         alert("You guessed it right! :)")
+        correctAnswer++;
         currentQ++;
     }
     if (currentQ < lastQuestion) {
-        // currentQ++;
         displayQ();
 
     } else {
+        currentQ = 0;
         quizDiv.style.display = "none";
         button1.style.display = "block";
         clearInterval(counter);
