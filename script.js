@@ -12,7 +12,7 @@ var choiceB = document.getElementById("#btn-1");
 var choiceC = document.getElementById("#btn-2");
 var choiceD = document.getElementById("#btn-3");
 
-var counter = 20;
+
 
 var startBttn = document.getElementById("#button1");
 
@@ -39,11 +39,15 @@ var questionsQuiz = [
     },
 ];
 
+var counter = 10 * questionsQuiz.length;
+
 button1.addEventListener("click", startTimer);
 
+var timer 
 // --- TIMER ----
 function startT() {
-    setInterval(function () {
+
+    timer = setInterval(function () {
         counter--;
         if (counter > 0) {
             span = document.getElementById("count");
@@ -104,7 +108,12 @@ function answerMatch(choice) {
         alert("You guessed it right! :)")
         correctAnswer++;
         currentQ++;
+    } else {
+        currentQ++
+        counter -= 10
+        alert("Try one more time!")
     }
+
     if (currentQ < lastQuestion) {
         displayQ();
 
@@ -112,8 +121,16 @@ function answerMatch(choice) {
         currentQ = 0;
         quizDiv.style.display = "none";
         button1.style.display = "block";
-        clearInterval(counter);
-        alert("The quiz has ended... Good luck!!!");
+        clearInterval(timer);
+
+        var userName = prompt("Hello, What's your name?");
+
+        alert("The quiz has ended. " + userName + ", you have gained: " + counter);
+
+        span = document.getElementById("countQ");
+        span.innerHTML = (" " + userName + " (" + counter + " points)");
+
+        counter = 10 * questionsQuiz.length;
     }
 }
 
